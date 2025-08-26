@@ -60,10 +60,10 @@
     <el-disclosure id="mobile-menu" hidden class="block md:hidden">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-        <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
-        <x-nav-link href="/report" :active="request()->is('report')">Report</x-nav-link>
+        <x-nav-linkmob href="/" :active="request()->is('/')">Home</x-nav-linkmob>
+        <x-nav-linkmob href="/about" :active="request()->is('about')">About</x-nav-linkmob>
+        <x-nav-linkmob href="/blog" :active="request()->is('blog')">Blog</x-nav-linkmob>
+        <x-nav-linkmob href="/report" :active="request()->is('report')">Report</x-nav-linkmob>
       </div>
       <div class="border-t border-white/10 pt-4 pb-3">
         <div class="flex items-center px-5">
