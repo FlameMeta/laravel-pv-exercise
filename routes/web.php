@@ -1,30 +1,9 @@
 <?php
 
-use Illuminate\Support\Arr;
+use App\Models\Post;
+// use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
-class Post
-{
-    public static function all()
-    {
-        return [
-            [
-                'slug' => 'judul-artikel-1',
-                'title' => 'title article 1',
-                'author' => 'HIDUP (*&@^$',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio necessitatibus nihil voluptatibus 
-      quibusdam quos cum modi excepturi nobis, sint porro placeat doloribus quo eaque eligendi magni rem unde ratione quam.' 
-            ],
-            [
-                'slug' => 'judul-artikel-2',
-                'title' => 'title article 2',
-                'author' => 'mulyono',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio necessitatibus nihil voluptatibus 
-      quibusdam quos cum modi excepturi nobis, sint porro placeat doloribus quo eaque eligendi magni rem unde ratione quam.'
-            ]
-        ];
-    }
-}
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -38,10 +17,7 @@ Route::get('/blog', function () {
 
 Route::get('/blog/{slug}', function ($slug) {
 
-
-    $post = Arr::first(Post::all(), function ($post) use ($slug) {
-        return $post['slug'] == $slug;
-    });
+    $post = Post::find($slug);
     
     return view('post', ['title' => 'ahhhh post', 'post' => $post]);
 
