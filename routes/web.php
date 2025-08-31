@@ -20,9 +20,7 @@ Route::get('/blog/{slug}', function ($slug) {
     $post = Post::find($slug);
     
     return view('post', ['title' => 'ahhhh post', 'post' => $post]);
-
 });
-
 
 Route::get('/report', function () {
     return view('report', ['title' => 'Report Page']);

@@ -29,8 +29,8 @@ class Post
         // return Arr::first(static::all(), function ($post) use ($slug) {
             //     return $post['slug'] == $slug;
             // });
-
-        $post = Arr::first(static::all(), fn ($post) => $post['slug'] == $slug);   //<<<=== arrow function php 8+
+ 
+        $post = Arr::first(static::all(), fn ($post) => $post['slug'] === $slug);   //<<<=== arrow function php 8+ (callback)
         
         if (!$post) {
             abort(404);
