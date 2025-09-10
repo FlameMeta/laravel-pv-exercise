@@ -41,4 +41,17 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    // public function admin(): static
+    // {
+    //     return $this->state(fn (array $attributes) => [
+    //         'is_admin' => true,
+    //     ]);
+    // }
 }
+
+
+
+// $a = $a ? $a : $b;  ternary operator
+// $a = $a ?: $b;     elvis operator
+// $a ??= $b;      null coalescing operator
